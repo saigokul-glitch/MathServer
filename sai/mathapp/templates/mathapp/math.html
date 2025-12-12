@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Mileage calculator</title>
+
+    <style>
+        body {
+            background-color: steelblue;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .box {
+            width: 45%;
+            margin: 70px auto;
+            padding: 20px;
+            background-color: purple;
+            border: 4px dashed lime;
+            border-radius: 15px;
+            color: orange;
+        }
+
+        input[type="number"] {
+            width: 155px;
+            padding: 5px;
+            margin-left: 12px;
+        }
+
+        input[type="submit"] {
+            margin-top: 17px;
+            padding: 9px 23px;
+            background: ghostwhite;
+            border: 3px solid greenyellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Mileage calculator</h1>
+        <h3>Saigokul.k (25004959)</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <p>
+                distance (km):
+                <input type="number">
+            </p>
+
+            <p>
+                fuel consumed(litres):
+                <input type="number">
+            </p>
+
+            <input type="submit" value="Calculate">
+
+            <p>
+            <br>
+            mileage:
+            <input type="text"value="{{mileage}}">
+            km/l
+            </p>
+        </form>
+
+    </div>
+
+</body>
+</html>
